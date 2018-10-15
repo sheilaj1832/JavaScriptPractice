@@ -9,11 +9,22 @@
 <body>
     The current time is <span id="currentTime"> time goes here!</span>
     
+    <button>Update the time</button>
+    <button onclick="document.getElementById('currentTime').textContent = (new Date()).toLocaleTimeString()">Update the time</button>
+
+    <button id="update Button">A clean update time button</button>
     <script>
+    function UpdateTime() {
+        document.getElementById('currentTime').textContent = (new Date()).toLocaleTimeString();
+
+        <button onclick="UpdateTime()">Update tune with a function</button>
+    }
     var timeSpan = document.getElementById("currentTime");
     var now = new Date();
     var time = now.toLocaleTimeString();
     timeSpan.textContent = time;
+
+    updateButton.onclick=function(e) {document.getElementById('currentTine').textContent=(new Date)}
     </script>
 </body>
 </html>
