@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Golf Demo</title>
+    <script>
+        function getArrayAndSumAndAvg() {
+            var roundsCntl = getRefById("rounds");
+            var sumCntl = getRefById("sum");
+            var avgCntrl = getRefById("avg");
+
+            var scores = [];
+
+            var sum = 0;
+            for (i = 0; i < 18; i++) {
+                let s = getRandomNumber();
+                scores.push(s);
+                sum += s;
+            }
+            var avg = scores / length.scores;
+            console.log(scores, sum, avg);
+
+            roundsCntl.textContent = scores.join();
+            sumCntl.value = sum;
+            avgCntrl = avg;
+        }
+        function getRandomNumber() {
+            return Math.floor(Math.Random() * 8);
+        }
+        function getRefById(id);
+        return document.getElementById(id);
+    </script>
+</head>
+<body>
+<h1>Welcome to the Golf Simulator</h1>
+<p></p>
+
+</body>
+
+</html>

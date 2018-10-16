@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Bowling</title>
     <script>
         function fillArraySumAndAverage() {
-            var framesCtrl = getRefById("frames");
-            var sumCtrl = getRefById("sum");
-            var avgCtrl = getRefById("avg");
+           // var framesCtrl = getRefById("frames"); commenting out for jquery
+           // var sumCtrl = getRefById("sum");
+           // var avgCtrl = getRefById("avg");
 
             var scores = [];
             // build the frames array with ten random numbers. "Push" adds something to the end of an array.
@@ -23,9 +24,12 @@
             var avg = sum / scores.length;
             console.log(scores, sum, avg);
 
-            framesCtrl.textContent = scores.join(" - ");
-            sumCtrl.value = sum;
-            avgCtrl.value = avg;
+            // framesCtrl.textContent = scores.join(" - "); commenting out for jQuery
+            // sumCtrl.value = sum;
+            // avgCtrl.value = avg;
+            $("#frames").text(scores); //frames is text content, not input, is .text is used
+            $("#sum").val(sum);
+            $("#avg").val(avg); //avg is an input tag so .val is used
 
         }
         // generate a random number between 0 and 10.
