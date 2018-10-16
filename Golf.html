@@ -7,10 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Golf Demo</title>
     <script>
-        function getArrayAndSumAndAvg() {
+        function fillArrayAndSumAndAvg() {
             var roundsCntl = getRefById("rounds");
             var sumCntl = getRefById("sum");
-            var avgCntrl = getRefById("avg");
+            var avgCntl = getRefById("avg");
+            var parCntl = getRefById("par1");
 
             var scores = [];
 
@@ -20,24 +21,46 @@
                 scores.push(s);
                 sum += s;
             }
-            var avg = scores / length.scores;
+            var avg = sum / scores.length;
             console.log(scores, sum, avg);
 
+            var par = 72;
+            var str = "";
+
+            if (sum < par) {
+                var diff = (par - sum);
+                var str = "You are " +diff +" under par";
+            }
+            else if  (sum >par) {
+                var diff = (sum - par)
+                var str = "You are " +diff +" over par";
+            }
+            else if  (sum == par) {
+                var str = "You have par";
+        }
             roundsCntl.textContent = scores.join();
             sumCntl.value = sum;
-            avgCntrl = avg;
+            avgCntl.value = avg;
+            parCntl.textContent = str;
+ 
         }
         function getRandomNumber() {
-            return Math.floor(Math.Random() * 8);
+            return Math.ceil(Math.random() * 7);
         }
-        function getRefById(id);
+        function getRefById(id) {
         return document.getElementById(id);
+        }
     </script>
 </head>
 <body>
 <h1>Welcome to the Golf Simulator</h1>
-<p></p>
-
+<p>Rounds</p>
+<p id="rounds">
+    The rounds array goes here.</p>
+<p>Sum: <input type ="text" value = "-" id = "sum"></p>
+<p>Avg: <input type ="text" value = "-" id = "avg"></p>
+<p id ="par1"></p>
+<button onclick = "fillArrayAndSumAndAvg()">Play</button>
 </body>
 
 </html>
