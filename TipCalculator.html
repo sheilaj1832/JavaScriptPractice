@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tip Calculator</title>
+
+<script>
+    function createTOP() {
+        console.log("createTOP fired");
+    let nbr = $("#userInt").val();
+
+    let info = "";
+    $("#powRows").empty();
+        let tipLow =nbr*.15;
+        let totalLow = total+tipLow
+        let tipMid =nbr*.20;
+        let totalMid = total+tipMid
+        let tipHigh =nbr*.25;
+        let totalHigh = total+tipHigh
+        let powRow = "15%\n"+"Tip amount:\t"+tipLow+"\n"+"Total amount:\t"+totalLow+"\n\n"+"20%\n"+"Tip amount:\t"+tipMid+"\n"+"Total amount:\t"+totalMid+"\n\n"+"15%\n"+"Tip amount:\t"+tipHigh+"\n"+"Total amount:\t"+totalHigh+"\n\n";
+
+        info +=powRow;
+    }
+    console.log(info);
+    $("#powRows").append(info);
+</script>
+
+</head>
+
+<body>
+<h1>Tip Calculator</h1>
+<div>
+    <label for="userInt">Cost of Meal: </label>
+    <input type="number" id="userInt" name="userInt">
+</div>
+<div>
+    <button type="submit" onclick="createTOP()">OK</button>
+</div>
+<div id="powRows">
+
+</div>
+</body>

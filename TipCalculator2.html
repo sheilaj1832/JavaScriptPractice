@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tip Calculator</title>
+
+</head>
+
+<body>
+    <h1>Tip Calculator</h1>
+    <script>
+
+        var choice = "y";
+        do { 
+
+        let nbr = prompt("Tip Calculator\n\nCost of Meal:\n\n");
+        var a = .15 * nbr;
+        var b = 1.15 * nbr;
+        var c = .2 * nbr;
+        var d = 1.2 * nbr;
+        var e = .25 * nbr;
+        var f = 1.25 * nbr;
+        alert("15%\n" + "Tip Amount:\t" + a + "\nTotal Amount: \t:" + b + "\n\n20%\n" + "Tip Amount:\t" + c + "\nTotal Amount: \t:" + d + "\n\n25%\n" + "Tip Amount:\t" + e + "\nTotal Amount: \t:" + f + "\n\n");
+
+        var choice = prompt("Continue y/n? ");
+}
+        while(choice = "y");
+        
+    </script>
+</body>
+
+</html>
