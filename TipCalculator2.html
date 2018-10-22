@@ -13,8 +13,8 @@
     <h1>Tip Calculator</h1>
     <script>
 
-        var choice = "y";
-        do { 
+        var choice = "";
+        while (choice != "n"){ 
 
         let nbr = prompt("Tip Calculator\n\nCost of Meal:\n\n");
         var a = .15 * nbr;
@@ -26,9 +26,7 @@
         alert("15%\n" + "Tip Amount:\t" + a + "\nTotal Amount: \t:" + b + "\n\n20%\n" + "Tip Amount:\t" + c + "\nTotal Amount: \t:" + d + "\n\n25%\n" + "Tip Amount:\t" + e + "\nTotal Amount: \t:" + f + "\n\n");
 
         var choice = prompt("Continue y/n? ");
-}
-        while(choice = "y");
-        
+}    
     </script>
 </body>
 
